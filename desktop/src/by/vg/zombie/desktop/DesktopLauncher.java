@@ -2,7 +2,8 @@ package by.vg.zombie.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import by.vg.zombie.Main;
+
+import by.vg.zombie.control.Main;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
