@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<Animation animationTexture="zombie/anim_woodcutter_wakeup/anim_woodcutter_wakeup.png" name="anim_woodcutter_wakeup">
+  <frames>
+    <list>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="0" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="267" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="534" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="801" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="1068" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="1335" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="1602" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="1869" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="2136" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="2403" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="2670" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="2937" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="3204" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="3471" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="3738" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="4005" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="4272" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="4539" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="4806" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="5073" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="5340" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="5607" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="5874" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="6141" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="6408" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="6675" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="6942" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="7209" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="7476" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="7743" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="8010" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="8277" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="8544" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="8811" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="9078" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="9345" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="9612" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="9879" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="3" width="267" x="10146" xOffset="0" y="0" yOffset="0"></Frame>
+    </list>
+  </frames>
+</Animation>

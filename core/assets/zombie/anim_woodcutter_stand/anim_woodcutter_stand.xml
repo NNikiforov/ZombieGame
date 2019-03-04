@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<Animation animationTexture="zombie/anim_woodcutter_stand/anim_woodcutter_stand.png" name="anim_woodcutter_stand">
+  <frames>
+    <list>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="1" width="267" x="0" xOffset="0" y="0" yOffset="0"></Frame>
+    </list>
+  </frames>
+  <int value="-16702201"></int>
+</Animation>
