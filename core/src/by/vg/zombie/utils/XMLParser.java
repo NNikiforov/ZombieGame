@@ -3,7 +3,6 @@ package by.vg.zombie.utils;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.XmlReader;
-import com.badlogic.gdx.utils.XmlReader.Element;
 
 public abstract class XMLParser {
 	protected XmlReader.Element root;

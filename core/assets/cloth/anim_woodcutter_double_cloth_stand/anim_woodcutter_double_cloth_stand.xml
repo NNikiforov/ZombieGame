@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<Animation animationTexture="cloth/anim_woodcutter_double_cloth_stand/anim_woodcutter_double_cloth_stand.png" name="anim_woodcutter_double_cloth_stand">
+  <frames>
+    <list>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="1" width="267" x="0" xOffset="0" y="0" yOffset="0"></Frame>
+    </list>
+  </frames>
+  <int value="-7673048"></int>
+</Animation>

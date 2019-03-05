@@ -5,7 +5,7 @@ import com.badlogic.gdx.Game;
 import by.vg.zombie.view.GameScreen;
 
 public class Main extends Game {
-		
+
 	@Override
 	public void create () {
 		setScreen(new GameScreen());

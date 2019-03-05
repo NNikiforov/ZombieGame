@@ -4,24 +4,22 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 
+import by.vg.zombie.model.WhiteWave;
 import by.vg.zombie.model.Zombie;
+import by.vg.zombie.model.state.OutfitType;
+import by.vg.zombie.view.GameScreen;
 
-public class Controller implements InputProcessor {
-
+public class Controller extends Stage implements InputProcessor {
 	private TiledMap map;
 	private OrthographicCamera camera;
 	private Zombie zombie;
 	private Float minScale, maxScale;
 	private Integer lastPosX, lastPosY;
 	private Boolean isMapMoving = false;
-	
-	
-	public Controller() {
-	}
 	
 	public OrthographicCamera getCamera() {
 		return camera;
@@ -42,7 +40,6 @@ public class Controller implements InputProcessor {
 	public Float getMinScale() {
 		return minScale;
 	}
-
 
 	public void setMinScale(Float minScale) {
 		this.minScale = minScale;
@@ -76,6 +73,19 @@ public class Controller implements InputProcessor {
 
 	@Override
 	public boolean keyTyped(char character) {
+		switch (character) {
+		case '1':
+			zombie.changeOutfit(OutfitType.NO);
+			break;
+		case '2':
+			zombie.changeOutfit(OutfitType.FIRST);
+			break;
+		case '3':
+			zombie.changeOutfit(OutfitType.SECOND);
+			break;
+		default:
+			break;
+		}
 		return false;
 	}
 
@@ -93,6 +103,7 @@ public class Controller implements InputProcessor {
 			Vector3 input = new Vector3(x1, y1, 0);
 			camera.unproject(input);
 			zombie.setTarget(new Vector2(input.x - 150, input.y - 80));
+			GameScreen.addGameObject(new WhiteWave(input.x - 35, input.y - 15));
 		}
 		return false;
 	}

@@ -7,7 +7,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.XmlReader.Element;
 
 import by.vg.zombie.model.Zombie;
-import by.vg.zombie.model.state.StandState;
+import by.vg.zombie.model.state.ZombieState;
 
 public class ZombieParser extends XMLParser {
 
@@ -21,7 +21,7 @@ public class ZombieParser extends XMLParser {
 		Integer height = Integer.valueOf(element.getAttribute("height"));
 		Integer width = Integer.valueOf(element.getAttribute("width"));
 
-		Zombie zombie = new Zombie(new StandState(), 0, 0, width, height);
+		Zombie zombie = new Zombie(ZombieState.WAKE_UP, 0, 0, width, height);
 		return zombie;
 	}
 	

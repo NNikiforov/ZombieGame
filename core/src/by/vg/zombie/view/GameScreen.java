@@ -1,23 +1,19 @@
 package by.vg.zombie.view;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.graphics.g2d.Animation.PlayMode;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
 import by.vg.zombie.control.Controller;
+import by.vg.zombie.model.GameObject;
 import by.vg.zombie.model.Zombie;
-import by.vg.zombie.model.state.WalkUpLeftState;
-import by.vg.zombie.model.state.WalkUpRightState;
-import by.vg.zombie.model.state.WallkDownLeftState;
-import by.vg.zombie.model.state.WallkDownRightState;
 import by.vg.zombie.utils.MapParser;
 import by.vg.zombie.utils.ZombieParser;
 
@@ -27,8 +23,16 @@ public class GameScreen implements Screen {
 	private TiledMap map;
 	private OrthogonalTiledMapRenderer renderer;
 	private OrthographicCamera camera;
-	private Zombie zombie;
+	private static List<GameObject> items = new ArrayList<GameObject>();
+
 	
+	public static void removeGameObject(GameObject object) {
+		items.remove(object);
+	}
+
+	public static void addGameObject(GameObject object) {
+		items.add(object);
+	}
 
 	@Override
 	public void show() {
@@ -41,8 +45,10 @@ public class GameScreen implements Screen {
 		camera = mParser.parseToCamera(controller);
 		Gdx.input.setInputProcessor(controller);
 
-		zombie = new ZombieParser("zombie/anim_woodcutter_stand/anim_woodcutter_stand.xml").parseToZombie();
+		Zombie zombie = new ZombieParser("zombie/anim_woodcutter_stand/anim_woodcutter_stand.xml").parseToZombie();
 		controller.setZombie(zombie);
+		
+		items.add(zombie);
 	}
 
 	@Override
@@ -50,12 +56,26 @@ public class GameScreen implements Screen {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
-		
 		renderer.setView(camera);
-		
 		renderer.render();
+		
+		List<GameObject> itemsToRemove = new ArrayList<GameObject>();
+		
+		for (GameObject gameObject : items) {
+			if (!gameObject.isActive()) {
+				itemsToRemove.add(gameObject);
+			}
+		}
+		
+		for (GameObject gameObject : itemsToRemove) {
+			items.remove(gameObject);
+		}
+		
 		SpriteBatch batch = (SpriteBatch) renderer.getBatch();
-		zombie.draw(batch);
+		
+		for (GameObject gameObject : items) {
+			gameObject.draw(batch);
+		}
 	}
 
 	@Override

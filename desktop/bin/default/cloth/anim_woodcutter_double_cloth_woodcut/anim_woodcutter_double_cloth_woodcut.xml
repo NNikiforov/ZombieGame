@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<Animation animationTexture="cloth/anim_woodcutter_double_cloth_woodcut/anim_woodcutter_double_cloth_woodcut.png" name="anim_woodcutter_double_cloth_woodcut">
+  <frames>
+    <list>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="2" width="267" x="0" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="2" width="267" x="267" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="2" width="267" x="534" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="2" width="267" x="801" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="2" width="267" x="1068" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="2" width="267" x="1335" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="2" width="267" x="1602" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="2" width="267" x="1869" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="200" ticks="2" width="267" x="2136" xOffset="0" y="0" yOffset="0"></Frame>
+    </list>
+  </frames>
+  <int value="-4858526"></int>
+</Animation>

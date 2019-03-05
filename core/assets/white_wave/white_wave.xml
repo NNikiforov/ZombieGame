@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<Animation animationTexture="white_wave/white_wave.png" name="white_wave">
+  <frames>
+    <list>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="35" ticks="4" width="66" x="0" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="35" ticks="4" width="66" x="66" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="35" ticks="4" width="66" x="132" xOffset="0" y="0" yOffset="0"></Frame>
+      <Frame flippedXOffset="0" flippedYOffset="0" height="35" ticks="4" width="66" x="198" xOffset="0" y="0" yOffset="0"></Frame>
+    </list>
+  </frames>
+  <int value="-16108210"></int>
+</Animation>
