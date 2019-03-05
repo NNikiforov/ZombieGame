@@ -48,16 +48,13 @@ public class Controller implements InputProcessor {
 		this.minScale = minScale;
 	}
 
-
 	public Float getMaxScale() {
 		return maxScale;
 	}
 
-
 	public void setMaxScale(Float maxScale) {
 		this.maxScale = maxScale;
 	}
-
 
 	public Zombie getZombie() {
 		return zombie;
@@ -71,10 +68,12 @@ public class Controller implements InputProcessor {
 	public boolean keyDown(int keycode) {
 		return false;
 	}
+
 	@Override
 	public boolean keyUp(int keycode) {
 		return false;
 	}
+
 	@Override
 	public boolean keyTyped(char character) {
 		return false;
@@ -93,11 +92,11 @@ public class Controller implements InputProcessor {
 			int y1 = Gdx.input.getY();
 			Vector3 input = new Vector3(x1, y1, 0);
 			camera.unproject(input);
-			Rectangle bounds = zombie.getBounds();
 			zombie.setTarget(new Vector2(input.x - 150, input.y - 80));
 		}
 		return false;
 	}
+
 	@Override
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
 		if (button == 0) {
@@ -105,6 +104,7 @@ public class Controller implements InputProcessor {
 		}
 		return false;
 	}
+
 	@Override
 	public boolean touchDragged(int screenX, int screenY, int pointer) {
 		if (isMapMoving) {
@@ -115,10 +115,12 @@ public class Controller implements InputProcessor {
 		}
 		return false;
 	}
+
 	@Override
 	public boolean mouseMoved(int screenX, int screenY) {
 		return false;
 	}
+
 	@Override
 	public boolean scrolled(int amount) {
 		float newZoom = camera.zoom + amount * 0.2f;

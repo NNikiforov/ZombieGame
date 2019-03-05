@@ -1,29 +1,36 @@
 package by.vg.zombie.model;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
+
+import by.vg.zombie.model.state.StandState;
+import by.vg.zombie.model.state.State;
+import by.vg.zombie.model.state.WalkUpLeftState;
+import by.vg.zombie.model.state.WalkUpRightState;
+import by.vg.zombie.model.state.WallkDownLeftState;
+import by.vg.zombie.model.state.WallkDownRightState;
 
 public class Zombie extends GameObject {
 
-	private Animation<TextureRegion> current;
-	private Animation<TextureRegion> stand;
-	private Animation<TextureRegion> wake_up;
-	private Animation<TextureRegion> walking_up_right;
-	private Animation<TextureRegion> walking_down_right;
-	private Animation<TextureRegion> walking_up_left;
-	private Animation<TextureRegion> walking_down_left;
+	private State state;
+
 	private float elapsedTime = 0;
 	private float speed = 50f;
 	private Vector2 target = new Vector2(bounds.x, bounds.y);
 
-	public Zombie(Animation<TextureRegion> animation, float x, float y,
+	public Zombie(State initialState, float x, float y,
 			float width, float height) {
 		super(x, y, width, height);
-		this.stand = animation;
-		this.current = animation;
+		state = initialState;
+	}
+	
+	public State getState() {
+		return state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
 	}
 
 	public Vector2 getTarget() {
@@ -34,59 +41,11 @@ public class Zombie extends GameObject {
 		this.target = target;
 	}
 
-	public Animation<TextureRegion> getStand() {
-		return stand;
-	}
-
-	public void setStand(Animation<TextureRegion> stand) {
-		this.stand = stand;
-	}
-
-	public Animation<TextureRegion> getWalking_up_right() {
-		return walking_up_right;
-	}
-
-	public Animation<TextureRegion> getWalking_down_right() {
-		return walking_down_right;
-	}
-
-	public Animation<TextureRegion> getWalking_up_left() {
-		return walking_up_left;
-	}
-
-	public Animation<TextureRegion> getWalking_down_left() {
-		return walking_down_left;
-	}
-	
-	public void setWalking_up_right(Animation<TextureRegion> walking_up_right) {
-		this.walking_up_right = walking_up_right;
-	}
-
-	public void setWalking_down_right(Animation<TextureRegion> walking_down_right) {
-		this.walking_down_right = walking_down_right;
-	}
-
-	public void setWalking_up_left(Animation<TextureRegion> walking_up_left) {
-		this.walking_up_left = walking_up_left;
-	}
-
-	public void setWalking_down_left(Animation<TextureRegion> walking_down_left) {
-		this.walking_down_left = walking_down_left;
-	}
-
-	public Animation<TextureRegion> getWake_up() {
-		return wake_up;
-	}
-
-	public void setWake_up(Animation<TextureRegion> wake_up) {
-		this.wake_up = wake_up;
-	}
-
 	public void draw(SpriteBatch batch) {
 		elapsedTime += Gdx.graphics.getDeltaTime();
 		batch.begin();
 		move();
-		batch.draw(current.getKeyFrame(elapsedTime, true), bounds.x,
+		batch.draw(state.getAnimation().getKeyFrame(elapsedTime, true), bounds.x,
 				bounds.y);
 		batch.end();
 	}
@@ -113,6 +72,8 @@ public class Zombie extends GameObject {
 						bounds.x += tmpY * Math.cos(alpha);
 						bounds.y += tmpY * Math.sin(alpha);
 					}
+					state = new WalkUpRightState();
+					return;
 				}
 				float tmpX = (float) (Math.cos(o2.angleRad(vec)) * vec.len());
 				if (tmpX >= offset) {
@@ -122,6 +83,7 @@ public class Zombie extends GameObject {
 					bounds.x += tmpX * Math.cos(alpha);
 					bounds.y -= tmpX * Math.sin(alpha);
 				}
+				state = new WallkDownRightState();
 			}
 
 			if (x < 0 && Math.abs(tan) < Math.tan(alpha)) {
@@ -134,6 +96,8 @@ public class Zombie extends GameObject {
 						bounds.x -= tmpY * Math.cos(alpha);
 						bounds.y -= tmpY * Math.sin(alpha);
 					}
+					state = new WallkDownLeftState();
+					return;
 				}
 				float tmpX = (float) (Math.cos(o2.angleRad(vec)) * vec.len());
 				if (Math.abs(tmpX) >= offset) {
@@ -143,6 +107,7 @@ public class Zombie extends GameObject {
 					bounds.x -= tmpX * Math.cos(alpha);
 					bounds.y += tmpX * Math.sin(alpha);
 				}
+				state = new WalkUpLeftState();
 			}
 
 			if (y > 0 && Math.abs(tan) > Math.tan(alpha)) {
@@ -156,6 +121,7 @@ public class Zombie extends GameObject {
 						bounds.x -= tmpX * Math.cos(alpha);
 						bounds.y += tmpX * Math.sin(alpha);
 					}
+					state = new WalkUpLeftState();
 					return;
 				}
 				float a = o1.angleRad(vec);
@@ -168,11 +134,12 @@ public class Zombie extends GameObject {
 					bounds.x += tmpY * Math.cos(alpha);
 					bounds.y += tmpY * Math.sin(alpha);
 				}
+				state = new WalkUpRightState();
 			}
 
 			if (y < 0 && Math.abs(tan) > Math.tan(alpha)) {
 				o1.scl(-1);
-				if (Math.abs(vec.angle(o1)) < 1) {
+				if (Math.abs(vec.angle(o2)) < 1) {
 					float tmpX = (float) (vec.len());
 					if (tmpX >= offset) {
 						bounds.x += offset * Math.cos(alpha);
@@ -181,6 +148,7 @@ public class Zombie extends GameObject {
 						bounds.x += tmpX * Math.cos(alpha);
 						bounds.y -= tmpX * Math.sin(alpha);
 					}
+					state = new WallkDownRightState();
 					return;
 				}
 				float a = o1.angleRad(vec);
@@ -193,7 +161,10 @@ public class Zombie extends GameObject {
 					bounds.x -= tmpY * Math.cos(alpha);
 					bounds.y -= tmpY * Math.sin(alpha);
 				}
+				state = new WallkDownLeftState();
 			}
+		} else {
+			state = new StandState();
 		}
 	}
 }

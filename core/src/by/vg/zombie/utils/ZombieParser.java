@@ -7,6 +7,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.XmlReader.Element;
 
 import by.vg.zombie.model.Zombie;
+import by.vg.zombie.model.state.StandState;
 
 public class ZombieParser extends XMLParser {
 
@@ -15,27 +16,12 @@ public class ZombieParser extends XMLParser {
 	}
 
 	public Zombie parseToZombie() {
-		Texture texture = new Texture(root.getAttribute("animationTexture"));
-		Array<Element> elements = root.getChildByName("frames").getChildByName("list").getChildrenByName("Frame");
-		Array<TextureRegion> keyFrames = new Array<TextureRegion>();
+		Element element = root.getChildByName("frames").getChildByName("list").getChildByName("Frame");
 		
-		Integer height = 100, ticks = 0, width = 50;
-		for (Element element : elements) {
-			Integer flippedXOffset = Integer.valueOf(element.getAttribute("flippedXOffset"));
-			Integer flippedYOffset = Integer.valueOf(element.getAttribute("flippedYOffset"));
-			height = Integer.valueOf(element.getAttribute("height"));
-			ticks += Integer.valueOf(element.getAttribute("ticks"));
-			width = Integer.valueOf(element.getAttribute("width"));
-			Integer x = Integer.valueOf(element.getAttribute("x"));
-			Integer xOffset = Integer.valueOf(element.getAttribute("xOffset"));
-			Integer y = Integer.valueOf(element.getAttribute("y"));
-			Integer yOffset = Integer.valueOf(element.getAttribute("yOffset"));
+		Integer height = Integer.valueOf(element.getAttribute("height"));
+		Integer width = Integer.valueOf(element.getAttribute("width"));
 
-			TextureRegion region = new TextureRegion(texture, x, y, width, height);
-			keyFrames.add(region);
-		}
-		Animation<TextureRegion> animation = new Animation<TextureRegion>(1f/ticks, keyFrames);
-		Zombie zombie = new Zombie(animation, 0, 0, width, height);
+		Zombie zombie = new Zombie(new StandState(), 0, 0, width, height);
 		return zombie;
 	}
 	

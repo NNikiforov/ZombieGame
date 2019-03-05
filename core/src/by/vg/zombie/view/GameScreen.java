@@ -14,6 +14,10 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
 import by.vg.zombie.control.Controller;
 import by.vg.zombie.model.Zombie;
+import by.vg.zombie.model.state.WalkUpLeftState;
+import by.vg.zombie.model.state.WalkUpRightState;
+import by.vg.zombie.model.state.WallkDownLeftState;
+import by.vg.zombie.model.state.WallkDownRightState;
 import by.vg.zombie.utils.MapParser;
 import by.vg.zombie.utils.ZombieParser;
 
@@ -38,28 +42,7 @@ public class GameScreen implements Screen {
 		Gdx.input.setInputProcessor(controller);
 
 		zombie = new ZombieParser("zombie/anim_woodcutter_stand/anim_woodcutter_stand.xml").parseToZombie();
-		
-		ZombieParser zParser = new ZombieParser("zombie/anim_woodcutter_walk_down/anim_woodcutter_walk_down.xml");
-		Animation<TextureRegion> animation = zParser.parseToAnimation();
-		zombie.setWalking_down_left(animation);
-		
-		animation = zParser.parseToFlippedAnimation();
-		zombie.setWalking_down_right(animation);
-		
-		zParser = new ZombieParser("zombie/anim_woodcutter_walk_up/anim_woodcutter_walk_up.xml");
-		animation = zParser.parseToAnimation();
-		zombie.setWalking_up_left(animation);
-	
-		animation = zParser.parseToFlippedAnimation();
-		zombie.setWalking_up_right(animation);
-		
-		animation = new ZombieParser("zombie/anim_woodcutter_wakeup/anim_woodcutter_wakeup.xml").parseToAnimation();
-		animation.setFrameDuration(1/15f);
-		zombie.setWake_up(animation);
-		
 		controller.setZombie(zombie);
-		
-		
 	}
 
 	@Override
