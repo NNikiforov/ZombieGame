@@ -59,6 +59,9 @@ public class Zombie extends GameObject {
 		cloth.changeState(state);
 	}
 
+	public OutfitType getOutfit() {
+		return cloth.getType();
+	}
 	public void changeOutfit(OutfitType type) {
 		hat.setType(type);
 		cloth.setType(type);

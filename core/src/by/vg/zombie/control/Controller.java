@@ -21,6 +21,7 @@ public class Controller extends Stage implements InputProcessor {
 	private Integer lastPosX, lastPosY;
 	private Boolean isMapMoving = false;
 	
+	
 	public OrthographicCamera getCamera() {
 		return camera;
 	}
@@ -92,6 +93,7 @@ public class Controller extends Stage implements InputProcessor {
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer,
 			int button) {
+		super.touchDown(screenX, screenY, pointer, button);
 		if (button == 0) {
 			lastPosX = screenX;
 			lastPosY = -screenY;
@@ -110,6 +112,7 @@ public class Controller extends Stage implements InputProcessor {
 
 	@Override
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+		super.touchUp(screenX, screenY, pointer, button);
 		if (button == 0) {
 			isMapMoving = false;
 		}
